@@ -299,7 +299,9 @@ const createPdf = (mode, invoice) => {
   let pdf = undefined;
 
   if (mode === "download") {
-    pdf = pdfMake.createPdf(docDefinition).download();
+    pdf = pdfMake
+      .createPdf(docDefinition)
+      .download(`Invoice_${invoice.id}.pdf`);
     return pdf;
   } else if (mode === "preview") {
     pdf = pdfMake.createPdf(docDefinition).open();
