@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import { InvoiceProvider } from "../context/InvoiceContext";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <InvoiceProvider>
+      <Component {...pageProps} />
+    </InvoiceProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
