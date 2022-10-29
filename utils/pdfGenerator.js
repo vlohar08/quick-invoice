@@ -2,7 +2,7 @@ import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-const createPdf = (mode, invoice) => {
+const pdfGenerator = (mode, invoice) => {
   const invoiceItems = [
     [
       {
@@ -322,7 +322,7 @@ const createPdf = (mode, invoice) => {
   }
 };
 
-export default createPdf;
+export default pdfGenerator;
 
 const invoiceItem = (item) => {
   return [
